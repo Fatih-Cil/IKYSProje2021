@@ -1,0 +1,764 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="IKYSProjeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Bolum">
+          <Key>
+            <PropertyRef Name="BolumId" />
+          </Key>
+          <Property Name="BolumId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BolumAdi" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SirketId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Bordro">
+          <Key>
+            <PropertyRef Name="BordroId" />
+          </Key>
+          <Property Name="BordroId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Tarih" Type="date" Nullable="false" />
+          <Property Name="HiMesai" Type="float" />
+          <Property Name="HsMesai" Type="float" />
+          <Property Name="Prim" Type="float" />
+          <Property Name="SaatUcret" Type="float" Nullable="false" />
+          <Property Name="CalistigiGun" Type="float" Nullable="false" />
+          <Property Name="Ucret" Type="float" Nullable="false" />
+          <Property Name="PersonelId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Gorev">
+          <Key>
+            <PropertyRef Name="GorevId" />
+          </Key>
+          <Property Name="GorevId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GorevAdi" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="KDKategori">
+          <Key>
+            <PropertyRef Name="KDKId" />
+          </Key>
+          <Property Name="KDKId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KDKAdi" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="KurumsalDokuman">
+          <Key>
+            <PropertyRef Name="KdId" />
+          </Key>
+          <Property Name="KdId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KdPath" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="SirketId" Type="int" Nullable="false" />
+          <Property Name="KDKId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Loglar">
+          <Key>
+            <PropertyRef Name="LogId" />
+          </Key>
+          <Property Name="LogId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Eylem" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Modul" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Aciklama" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Tarih" Type="date" Nullable="false" />
+          <Property Name="PersonelId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PDKategori">
+          <Key>
+            <PropertyRef Name="PDKId" />
+          </Key>
+          <Property Name="PDKId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PDKAdi" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Personel">
+          <Key>
+            <PropertyRef Name="PersonelId" />
+          </Key>
+          <Property Name="PersonelId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SicilNo" Type="int" Nullable="false" />
+          <Property Name="TcNo" Type="nvarchar" MaxLength="11" Nullable="false" />
+          <Property Name="Ad" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Soyad" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="DogumTarihi" Type="date" />
+          <Property Name="Cep1" Type="nvarchar" MaxLength="12" />
+          <Property Name="Cep2" Type="nvarchar" MaxLength="12" />
+          <Property Name="Eposta1" Type="nvarchar" MaxLength="50" />
+          <Property Name="Eposta2" Type="nvarchar" MaxLength="50" />
+          <Property Name="Adres" Type="nvarchar" MaxLength="500" />
+          <Property Name="Sifre" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="YillikIzin" Type="float" />
+          <Property Name="Maas" Type="float" Nullable="false" />
+          <Property Name="OzelSaglik" Type="nvarchar" MaxLength="10" />
+          <Property Name="KanGrubu" Type="nvarchar" MaxLength="5" />
+          <Property Name="IseGiris" Type="date" Nullable="false" />
+          <Property Name="IstenCikis" Type="date" />
+          <Property Name="Durum" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="BolumId" Type="int" Nullable="false" />
+          <Property Name="GorevId" Type="int" Nullable="false" />
+          <Property Name="RolId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PersonelDokuman">
+          <Key>
+            <PropertyRef Name="PdId" />
+          </Key>
+          <Property Name="PdId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PdPath" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="PersonelId" Type="int" Nullable="false" />
+          <Property Name="PDKId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Roller">
+          <Key>
+            <PropertyRef Name="RolId" />
+          </Key>
+          <Property Name="RolId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RolAdi" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="RolAciklama" Type="nvarchar" MaxLength="500" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sirket">
+          <Key>
+            <PropertyRef Name="SirketId" />
+          </Key>
+          <Property Name="SirketId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Unvan" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Adres" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Telefon" Type="nvarchar" MaxLength="12" Nullable="false" />
+          <Property Name="VergiDairesiAdi" Type="nvarchar" MaxLength="50" />
+          <Property Name="VergiDairesiNo" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK__Bolum__SirketId__2D27B809">
+          <End Role="Sirket" Type="Self.Sirket" Multiplicity="1" />
+          <End Role="Bolum" Type="Self.Bolum" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sirket">
+              <PropertyRef Name="SirketId" />
+            </Principal>
+            <Dependent Role="Bolum">
+              <PropertyRef Name="SirketId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Bordro__Personel__403A8C7D">
+          <End Role="Personel" Type="Self.Personel" Multiplicity="1" />
+          <End Role="Bordro" Type="Self.Bordro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personel">
+              <PropertyRef Name="PersonelId" />
+            </Principal>
+            <Dependent Role="Bordro">
+              <PropertyRef Name="PersonelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__KurumsalD__KDKId__30F848ED">
+          <End Role="KDKategori" Type="Self.KDKategori" Multiplicity="1" />
+          <End Role="KurumsalDokuman" Type="Self.KurumsalDokuman" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KDKategori">
+              <PropertyRef Name="KDKId" />
+            </Principal>
+            <Dependent Role="KurumsalDokuman">
+              <PropertyRef Name="KDKId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__KurumsalD__Sirke__300424B4">
+          <End Role="Sirket" Type="Self.Sirket" Multiplicity="1" />
+          <End Role="KurumsalDokuman" Type="Self.KurumsalDokuman" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sirket">
+              <PropertyRef Name="SirketId" />
+            </Principal>
+            <Dependent Role="KurumsalDokuman">
+              <PropertyRef Name="SirketId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Loglar__Personel__398D8EEE">
+          <End Role="Personel" Type="Self.Personel" Multiplicity="1" />
+          <End Role="Loglar" Type="Self.Loglar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personel">
+              <PropertyRef Name="PersonelId" />
+            </Principal>
+            <Dependent Role="Loglar">
+              <PropertyRef Name="PersonelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Personel__BolumI__34C8D9D1">
+          <End Role="Bolum" Type="Self.Bolum" Multiplicity="1" />
+          <End Role="Personel" Type="Self.Personel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bolum">
+              <PropertyRef Name="BolumId" />
+            </Principal>
+            <Dependent Role="Personel">
+              <PropertyRef Name="BolumId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Personel__GorevI__35BCFE0A">
+          <End Role="Gorev" Type="Self.Gorev" Multiplicity="1" />
+          <End Role="Personel" Type="Self.Personel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gorev">
+              <PropertyRef Name="GorevId" />
+            </Principal>
+            <Dependent Role="Personel">
+              <PropertyRef Name="GorevId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Personel__RolId__36B12243">
+          <End Role="Roller" Type="Self.Roller" Multiplicity="1" />
+          <End Role="Personel" Type="Self.Personel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roller">
+              <PropertyRef Name="RolId" />
+            </Principal>
+            <Dependent Role="Personel">
+              <PropertyRef Name="RolId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PersonelD__PDKId__3D5E1FD2">
+          <End Role="PDKategori" Type="Self.PDKategori" Multiplicity="1" />
+          <End Role="PersonelDokuman" Type="Self.PersonelDokuman" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PDKategori">
+              <PropertyRef Name="PDKId" />
+            </Principal>
+            <Dependent Role="PersonelDokuman">
+              <PropertyRef Name="PDKId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PersonelD__Perso__3C69FB99">
+          <End Role="Personel" Type="Self.Personel" Multiplicity="1" />
+          <End Role="PersonelDokuman" Type="Self.PersonelDokuman" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personel">
+              <PropertyRef Name="PersonelId" />
+            </Principal>
+            <Dependent Role="PersonelDokuman">
+              <PropertyRef Name="PersonelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="IKYSProjeModelStoreContainer">
+          <EntitySet Name="Bolum" EntityType="Self.Bolum" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Bordro" EntityType="Self.Bordro" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Gorev" EntityType="Self.Gorev" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KDKategori" EntityType="Self.KDKategori" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KurumsalDokuman" EntityType="Self.KurumsalDokuman" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Loglar" EntityType="Self.Loglar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PDKategori" EntityType="Self.PDKategori" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Personel" EntityType="Self.Personel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PersonelDokuman" EntityType="Self.PersonelDokuman" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Roller" EntityType="Self.Roller" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sirket" EntityType="Self.Sirket" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Bolum__SirketId__2D27B809" Association="Self.FK__Bolum__SirketId__2D27B809">
+            <End Role="Sirket" EntitySet="Sirket" />
+            <End Role="Bolum" EntitySet="Bolum" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Bordro__Personel__403A8C7D" Association="Self.FK__Bordro__Personel__403A8C7D">
+            <End Role="Personel" EntitySet="Personel" />
+            <End Role="Bordro" EntitySet="Bordro" />
+          </AssociationSet>
+          <AssociationSet Name="FK__KurumsalD__KDKId__30F848ED" Association="Self.FK__KurumsalD__KDKId__30F848ED">
+            <End Role="KDKategori" EntitySet="KDKategori" />
+            <End Role="KurumsalDokuman" EntitySet="KurumsalDokuman" />
+          </AssociationSet>
+          <AssociationSet Name="FK__KurumsalD__Sirke__300424B4" Association="Self.FK__KurumsalD__Sirke__300424B4">
+            <End Role="Sirket" EntitySet="Sirket" />
+            <End Role="KurumsalDokuman" EntitySet="KurumsalDokuman" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Loglar__Personel__398D8EEE" Association="Self.FK__Loglar__Personel__398D8EEE">
+            <End Role="Personel" EntitySet="Personel" />
+            <End Role="Loglar" EntitySet="Loglar" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Personel__BolumI__34C8D9D1" Association="Self.FK__Personel__BolumI__34C8D9D1">
+            <End Role="Bolum" EntitySet="Bolum" />
+            <End Role="Personel" EntitySet="Personel" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Personel__GorevI__35BCFE0A" Association="Self.FK__Personel__GorevI__35BCFE0A">
+            <End Role="Gorev" EntitySet="Gorev" />
+            <End Role="Personel" EntitySet="Personel" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Personel__RolId__36B12243" Association="Self.FK__Personel__RolId__36B12243">
+            <End Role="Roller" EntitySet="Roller" />
+            <End Role="Personel" EntitySet="Personel" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PersonelD__PDKId__3D5E1FD2" Association="Self.FK__PersonelD__PDKId__3D5E1FD2">
+            <End Role="PDKategori" EntitySet="PDKategori" />
+            <End Role="PersonelDokuman" EntitySet="PersonelDokuman" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PersonelD__Perso__3C69FB99" Association="Self.FK__PersonelD__Perso__3C69FB99">
+            <End Role="Personel" EntitySet="Personel" />
+            <End Role="PersonelDokuman" EntitySet="PersonelDokuman" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="IKYSProjeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Bolum">
+          <Key>
+            <PropertyRef Name="BolumId" />
+          </Key>
+          <Property Name="BolumId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BolumAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SirketId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Sirket" Relationship="Self.FK__Bolum__SirketId__2D27B809" FromRole="Bolum" ToRole="Sirket" />
+          <NavigationProperty Name="Personel" Relationship="Self.FK__Personel__BolumI__34C8D9D1" FromRole="Bolum" ToRole="Personel" />
+        </EntityType>
+        <EntityType Name="Bordro">
+          <Key>
+            <PropertyRef Name="BordroId" />
+          </Key>
+          <Property Name="BordroId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Tarih" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="HiMesai" Type="Double" />
+          <Property Name="HsMesai" Type="Double" />
+          <Property Name="Prim" Type="Double" />
+          <Property Name="SaatUcret" Type="Double" Nullable="false" />
+          <Property Name="CalistigiGun" Type="Double" Nullable="false" />
+          <Property Name="Ucret" Type="Double" Nullable="false" />
+          <Property Name="PersonelId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Personel" Relationship="Self.FK__Bordro__Personel__403A8C7D" FromRole="Bordro" ToRole="Personel" />
+        </EntityType>
+        <EntityType Name="Gorev">
+          <Key>
+            <PropertyRef Name="GorevId" />
+          </Key>
+          <Property Name="GorevId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GorevAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Personel" Relationship="Self.FK__Personel__GorevI__35BCFE0A" FromRole="Gorev" ToRole="Personel" />
+        </EntityType>
+        <EntityType Name="KDKategori">
+          <Key>
+            <PropertyRef Name="KDKId" />
+          </Key>
+          <Property Name="KDKId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KDKAdi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="KurumsalDokuman" Relationship="Self.FK__KurumsalD__KDKId__30F848ED" FromRole="KDKategori" ToRole="KurumsalDokuman" />
+        </EntityType>
+        <EntityType Name="KurumsalDokuman">
+          <Key>
+            <PropertyRef Name="KdId" />
+          </Key>
+          <Property Name="KdId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KdPath" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SirketId" Type="Int32" Nullable="false" />
+          <Property Name="KDKId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="KDKategori" Relationship="Self.FK__KurumsalD__KDKId__30F848ED" FromRole="KurumsalDokuman" ToRole="KDKategori" />
+          <NavigationProperty Name="Sirket" Relationship="Self.FK__KurumsalD__Sirke__300424B4" FromRole="KurumsalDokuman" ToRole="Sirket" />
+        </EntityType>
+        <EntityType Name="Loglar">
+          <Key>
+            <PropertyRef Name="LogId" />
+          </Key>
+          <Property Name="LogId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Eylem" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Modul" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Aciklama" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Tarih" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="PersonelId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Personel" Relationship="Self.FK__Loglar__Personel__398D8EEE" FromRole="Loglar" ToRole="Personel" />
+        </EntityType>
+        <EntityType Name="PDKategori">
+          <Key>
+            <PropertyRef Name="PDKId" />
+          </Key>
+          <Property Name="PDKId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PDKAdi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="PersonelDokuman" Relationship="Self.FK__PersonelD__PDKId__3D5E1FD2" FromRole="PDKategori" ToRole="PersonelDokuman" />
+        </EntityType>
+        <EntityType Name="Personel">
+          <Key>
+            <PropertyRef Name="PersonelId" />
+          </Key>
+          <Property Name="PersonelId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SicilNo" Type="Int32" Nullable="false" />
+          <Property Name="TcNo" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Ad" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Soyad" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DogumTarihi" Type="DateTime" Precision="0" />
+          <Property Name="Cep1" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="Cep2" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="Eposta1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Eposta2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Adres" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Sifre" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="YillikIzin" Type="Double" />
+          <Property Name="Maas" Type="Double" Nullable="false" />
+          <Property Name="OzelSaglik" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="KanGrubu" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="IseGiris" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="IstenCikis" Type="DateTime" Precision="0" />
+          <Property Name="Durum" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BolumId" Type="Int32" Nullable="false" />
+          <Property Name="GorevId" Type="Int32" Nullable="false" />
+          <Property Name="RolId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PersonelDokuman">
+          <Key>
+            <PropertyRef Name="PdId" />
+          </Key>
+          <Property Name="PdId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PdPath" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PersonelId" Type="Int32" Nullable="false" />
+          <Property Name="PDKId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="PDKategori" Relationship="Self.FK__PersonelD__PDKId__3D5E1FD2" FromRole="PersonelDokuman" ToRole="PDKategori" />
+          <NavigationProperty Name="Personel" Relationship="Self.FK__PersonelD__Perso__3C69FB99" FromRole="PersonelDokuman" ToRole="Personel" />
+        </EntityType>
+        <EntityType Name="Roller">
+          <Key>
+            <PropertyRef Name="RolId" />
+          </Key>
+          <Property Name="RolId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RolAdi" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RolAciklama" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Personel" Relationship="Self.FK__Personel__RolId__36B12243" FromRole="Roller" ToRole="Personel" />
+        </EntityType>
+        <EntityType Name="Sirket">
+          <Key>
+            <PropertyRef Name="SirketId" />
+          </Key>
+          <Property Name="SirketId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Unvan" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Adres" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Telefon" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="VergiDairesiAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VergiDairesiNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK__Bolum__SirketId__2D27B809">
+          <End Role="Sirket" Type="Self.Sirket" Multiplicity="1" />
+          <End Role="Bolum" Type="Self.Bolum" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sirket">
+              <PropertyRef Name="SirketId" />
+            </Principal>
+            <Dependent Role="Bolum">
+              <PropertyRef Name="SirketId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Personel__BolumI__34C8D9D1">
+          <End Role="Bolum" Type="Self.Bolum" Multiplicity="1" />
+          <End Role="Personel" Type="Self.Personel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bolum">
+              <PropertyRef Name="BolumId" />
+            </Principal>
+            <Dependent Role="Personel">
+              <PropertyRef Name="BolumId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Bordro__Personel__403A8C7D">
+          <End Role="Personel" Type="Self.Personel" Multiplicity="1" />
+          <End Role="Bordro" Type="Self.Bordro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personel">
+              <PropertyRef Name="PersonelId" />
+            </Principal>
+            <Dependent Role="Bordro">
+              <PropertyRef Name="PersonelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Personel__GorevI__35BCFE0A">
+          <End Role="Gorev" Type="Self.Gorev" Multiplicity="1" />
+          <End Role="Personel" Type="Self.Personel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gorev">
+              <PropertyRef Name="GorevId" />
+            </Principal>
+            <Dependent Role="Personel">
+              <PropertyRef Name="GorevId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__KurumsalD__KDKId__30F848ED">
+          <End Role="KDKategori" Type="Self.KDKategori" Multiplicity="1" />
+          <End Role="KurumsalDokuman" Type="Self.KurumsalDokuman" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KDKategori">
+              <PropertyRef Name="KDKId" />
+            </Principal>
+            <Dependent Role="KurumsalDokuman">
+              <PropertyRef Name="KDKId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__KurumsalD__Sirke__300424B4">
+          <End Role="Sirket" Type="Self.Sirket" Multiplicity="1" />
+          <End Role="KurumsalDokuman" Type="Self.KurumsalDokuman" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sirket">
+              <PropertyRef Name="SirketId" />
+            </Principal>
+            <Dependent Role="KurumsalDokuman">
+              <PropertyRef Name="SirketId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Loglar__Personel__398D8EEE">
+          <End Role="Personel" Type="Self.Personel" Multiplicity="1" />
+          <End Role="Loglar" Type="Self.Loglar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personel">
+              <PropertyRef Name="PersonelId" />
+            </Principal>
+            <Dependent Role="Loglar">
+              <PropertyRef Name="PersonelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PersonelD__PDKId__3D5E1FD2">
+          <End Role="PDKategori" Type="Self.PDKategori" Multiplicity="1" />
+          <End Role="PersonelDokuman" Type="Self.PersonelDokuman" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PDKategori">
+              <PropertyRef Name="PDKId" />
+            </Principal>
+            <Dependent Role="PersonelDokuman">
+              <PropertyRef Name="PDKId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Personel__RolId__36B12243">
+          <End Role="Roller" Type="Self.Roller" Multiplicity="1" />
+          <End Role="Personel" Type="Self.Personel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roller">
+              <PropertyRef Name="RolId" />
+            </Principal>
+            <Dependent Role="Personel">
+              <PropertyRef Name="RolId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PersonelD__Perso__3C69FB99">
+          <End Role="Personel" Type="Self.Personel" Multiplicity="1" />
+          <End Role="PersonelDokuman" Type="Self.PersonelDokuman" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personel">
+              <PropertyRef Name="PersonelId" />
+            </Principal>
+            <Dependent Role="PersonelDokuman">
+              <PropertyRef Name="PersonelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="IKYSProjeEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Bolum" EntityType="Self.Bolum" />
+          <EntitySet Name="Bordro" EntityType="Self.Bordro" />
+          <EntitySet Name="Gorev" EntityType="Self.Gorev" />
+          <EntitySet Name="KDKategori" EntityType="Self.KDKategori" />
+          <EntitySet Name="KurumsalDokuman" EntityType="Self.KurumsalDokuman" />
+          <EntitySet Name="Loglar" EntityType="Self.Loglar" />
+          <EntitySet Name="PDKategori" EntityType="Self.PDKategori" />
+          <EntitySet Name="Personel" EntityType="Self.Personel" />
+          <EntitySet Name="PersonelDokuman" EntityType="Self.PersonelDokuman" />
+          <EntitySet Name="Roller" EntityType="Self.Roller" />
+          <EntitySet Name="Sirket" EntityType="Self.Sirket" />
+          <AssociationSet Name="FK__Bolum__SirketId__2D27B809" Association="Self.FK__Bolum__SirketId__2D27B809">
+            <End Role="Sirket" EntitySet="Sirket" />
+            <End Role="Bolum" EntitySet="Bolum" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Personel__BolumI__34C8D9D1" Association="Self.FK__Personel__BolumI__34C8D9D1">
+            <End Role="Bolum" EntitySet="Bolum" />
+            <End Role="Personel" EntitySet="Personel" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Bordro__Personel__403A8C7D" Association="Self.FK__Bordro__Personel__403A8C7D">
+            <End Role="Personel" EntitySet="Personel" />
+            <End Role="Bordro" EntitySet="Bordro" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Personel__GorevI__35BCFE0A" Association="Self.FK__Personel__GorevI__35BCFE0A">
+            <End Role="Gorev" EntitySet="Gorev" />
+            <End Role="Personel" EntitySet="Personel" />
+          </AssociationSet>
+          <AssociationSet Name="FK__KurumsalD__KDKId__30F848ED" Association="Self.FK__KurumsalD__KDKId__30F848ED">
+            <End Role="KDKategori" EntitySet="KDKategori" />
+            <End Role="KurumsalDokuman" EntitySet="KurumsalDokuman" />
+          </AssociationSet>
+          <AssociationSet Name="FK__KurumsalD__Sirke__300424B4" Association="Self.FK__KurumsalD__Sirke__300424B4">
+            <End Role="Sirket" EntitySet="Sirket" />
+            <End Role="KurumsalDokuman" EntitySet="KurumsalDokuman" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Loglar__Personel__398D8EEE" Association="Self.FK__Loglar__Personel__398D8EEE">
+            <End Role="Personel" EntitySet="Personel" />
+            <End Role="Loglar" EntitySet="Loglar" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PersonelD__PDKId__3D5E1FD2" Association="Self.FK__PersonelD__PDKId__3D5E1FD2">
+            <End Role="PDKategori" EntitySet="PDKategori" />
+            <End Role="PersonelDokuman" EntitySet="PersonelDokuman" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Personel__RolId__36B12243" Association="Self.FK__Personel__RolId__36B12243">
+            <End Role="Roller" EntitySet="Roller" />
+            <End Role="Personel" EntitySet="Personel" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PersonelD__Perso__3C69FB99" Association="Self.FK__PersonelD__Perso__3C69FB99">
+            <End Role="Personel" EntitySet="Personel" />
+            <End Role="PersonelDokuman" EntitySet="PersonelDokuman" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="IKYSProjeModelStoreContainer" CdmEntityContainer="IKYSProjeEntities">
+          <EntitySetMapping Name="Bolum">
+            <EntityTypeMapping TypeName="IKYSProjeModel.Bolum">
+              <MappingFragment StoreEntitySet="Bolum">
+                <ScalarProperty Name="BolumId" ColumnName="BolumId" />
+                <ScalarProperty Name="BolumAdi" ColumnName="BolumAdi" />
+                <ScalarProperty Name="SirketId" ColumnName="SirketId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Bordro">
+            <EntityTypeMapping TypeName="IKYSProjeModel.Bordro">
+              <MappingFragment StoreEntitySet="Bordro">
+                <ScalarProperty Name="BordroId" ColumnName="BordroId" />
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+                <ScalarProperty Name="HiMesai" ColumnName="HiMesai" />
+                <ScalarProperty Name="HsMesai" ColumnName="HsMesai" />
+                <ScalarProperty Name="Prim" ColumnName="Prim" />
+                <ScalarProperty Name="SaatUcret" ColumnName="SaatUcret" />
+                <ScalarProperty Name="CalistigiGun" ColumnName="CalistigiGun" />
+                <ScalarProperty Name="Ucret" ColumnName="Ucret" />
+                <ScalarProperty Name="PersonelId" ColumnName="PersonelId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Gorev">
+            <EntityTypeMapping TypeName="IKYSProjeModel.Gorev">
+              <MappingFragment StoreEntitySet="Gorev">
+                <ScalarProperty Name="GorevId" ColumnName="GorevId" />
+                <ScalarProperty Name="GorevAdi" ColumnName="GorevAdi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KDKategori">
+            <EntityTypeMapping TypeName="IKYSProjeModel.KDKategori">
+              <MappingFragment StoreEntitySet="KDKategori">
+                <ScalarProperty Name="KDKId" ColumnName="KDKId" />
+                <ScalarProperty Name="KDKAdi" ColumnName="KDKAdi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KurumsalDokuman">
+            <EntityTypeMapping TypeName="IKYSProjeModel.KurumsalDokuman">
+              <MappingFragment StoreEntitySet="KurumsalDokuman">
+                <ScalarProperty Name="KdId" ColumnName="KdId" />
+                <ScalarProperty Name="KdPath" ColumnName="KdPath" />
+                <ScalarProperty Name="SirketId" ColumnName="SirketId" />
+                <ScalarProperty Name="KDKId" ColumnName="KDKId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Loglar">
+            <EntityTypeMapping TypeName="IKYSProjeModel.Loglar">
+              <MappingFragment StoreEntitySet="Loglar">
+                <ScalarProperty Name="LogId" ColumnName="LogId" />
+                <ScalarProperty Name="Eylem" ColumnName="Eylem" />
+                <ScalarProperty Name="Modul" ColumnName="Modul" />
+                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+                <ScalarProperty Name="PersonelId" ColumnName="PersonelId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PDKategori">
+            <EntityTypeMapping TypeName="IKYSProjeModel.PDKategori">
+              <MappingFragment StoreEntitySet="PDKategori">
+                <ScalarProperty Name="PDKId" ColumnName="PDKId" />
+                <ScalarProperty Name="PDKAdi" ColumnName="PDKAdi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Personel">
+            <EntityTypeMapping TypeName="IKYSProjeModel.Personel">
+              <MappingFragment StoreEntitySet="Personel">
+                <ScalarProperty Name="PersonelId" ColumnName="PersonelId" />
+                <ScalarProperty Name="SicilNo" ColumnName="SicilNo" />
+                <ScalarProperty Name="TcNo" ColumnName="TcNo" />
+                <ScalarProperty Name="Ad" ColumnName="Ad" />
+                <ScalarProperty Name="Soyad" ColumnName="Soyad" />
+                <ScalarProperty Name="DogumTarihi" ColumnName="DogumTarihi" />
+                <ScalarProperty Name="Cep1" ColumnName="Cep1" />
+                <ScalarProperty Name="Cep2" ColumnName="Cep2" />
+                <ScalarProperty Name="Eposta1" ColumnName="Eposta1" />
+                <ScalarProperty Name="Eposta2" ColumnName="Eposta2" />
+                <ScalarProperty Name="Adres" ColumnName="Adres" />
+                <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+                <ScalarProperty Name="YillikIzin" ColumnName="YillikIzin" />
+                <ScalarProperty Name="Maas" ColumnName="Maas" />
+                <ScalarProperty Name="OzelSaglik" ColumnName="OzelSaglik" />
+                <ScalarProperty Name="KanGrubu" ColumnName="KanGrubu" />
+                <ScalarProperty Name="IseGiris" ColumnName="IseGiris" />
+                <ScalarProperty Name="IstenCikis" ColumnName="IstenCikis" />
+                <ScalarProperty Name="Durum" ColumnName="Durum" />
+                <ScalarProperty Name="BolumId" ColumnName="BolumId" />
+                <ScalarProperty Name="GorevId" ColumnName="GorevId" />
+                <ScalarProperty Name="RolId" ColumnName="RolId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PersonelDokuman">
+            <EntityTypeMapping TypeName="IKYSProjeModel.PersonelDokuman">
+              <MappingFragment StoreEntitySet="PersonelDokuman">
+                <ScalarProperty Name="PdId" ColumnName="PdId" />
+                <ScalarProperty Name="PdPath" ColumnName="PdPath" />
+                <ScalarProperty Name="PersonelId" ColumnName="PersonelId" />
+                <ScalarProperty Name="PDKId" ColumnName="PDKId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roller">
+            <EntityTypeMapping TypeName="IKYSProjeModel.Roller">
+              <MappingFragment StoreEntitySet="Roller">
+                <ScalarProperty Name="RolId" ColumnName="RolId" />
+                <ScalarProperty Name="RolAdi" ColumnName="RolAdi" />
+                <ScalarProperty Name="RolAciklama" ColumnName="RolAciklama" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sirket">
+            <EntityTypeMapping TypeName="IKYSProjeModel.Sirket">
+              <MappingFragment StoreEntitySet="Sirket">
+                <ScalarProperty Name="VergiDairesiNo" ColumnName="VergiDairesiNo" />
+                <ScalarProperty Name="VergiDairesiAdi" ColumnName="VergiDairesiAdi" />
+                <ScalarProperty Name="SirketId" ColumnName="SirketId" />
+                <ScalarProperty Name="Unvan" ColumnName="Unvan" />
+                <ScalarProperty Name="Adres" ColumnName="Adres" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

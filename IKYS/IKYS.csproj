@@ -1,0 +1,378 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{858151A1-D52F-4CEE-B982-185E93859A3F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>IKYS</RootNamespace>
+    <AssemblyName>IKYS</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abstract\IBolumDal.cs" />
+    <Compile Include="Abstract\IBordroDal.cs" />
+    <Compile Include="Abstract\IGorevDal.cs" />
+    <Compile Include="Abstract\IKDKategoriDal.cs" />
+    <Compile Include="Abstract\IKurumsalDokumanDal.cs" />
+    <Compile Include="Abstract\ILogDal.cs" />
+    <Compile Include="Abstract\IPDKategoriDal.cs" />
+    <Compile Include="Abstract\IPersonelDokumanDal.cs" />
+    <Compile Include="Abstract\IRepository.cs" />
+    <Compile Include="Abstract\IRolDal.cs" />
+    <Compile Include="Abstract\ISirketDal.cs" />
+    <Compile Include="AnaSayfa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AnaSayfa.Designer.cs">
+      <DependentUpon>AnaSayfa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bolum.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BolumRaporlamaUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BolumRaporlamaUI.Designer.cs">
+      <DependentUpon>BolumRaporlamaUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BolumUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BolumUI.Designer.cs">
+      <DependentUpon>BolumUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bordro.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BordroGoruntuleUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BordroGoruntuleUI.Designer.cs">
+      <DependentUpon>BordroGoruntuleUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BordroOlusturUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BordroOlusturUI.Designer.cs">
+      <DependentUpon>BordroOlusturUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Business\GirisManager.cs" />
+    <Compile Include="Business\MD5Sifreleme.cs" />
+    <Compile Include="DataAccess\BolumDal.cs" />
+    <Compile Include="DataAccess\BordroDal.cs" />
+    <Compile Include="DataAccess\GorevDal.cs" />
+    <Compile Include="DataAccess\KDKategoriDal.cs" />
+    <Compile Include="DataAccess\KurumsalDokumanDal.cs" />
+    <Compile Include="DataAccess\LogDal.cs" />
+    <Compile Include="DataAccess\PDKategoriDal.cs" />
+    <Compile Include="DataAccess\PersonelDal.cs" />
+    <Compile Include="DataAccess\PersonelDokumanDal.cs" />
+    <Compile Include="DataAccess\RolDal.cs" />
+    <Compile Include="DataAccess\SirketDal.cs" />
+    <Compile Include="Deneme.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gorev.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GorevUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GorevUI.Designer.cs">
+      <DependentUpon>GorevUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HatirlaticiUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HatirlaticiUI.Designer.cs">
+      <DependentUpon>HatirlaticiUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KDKategori.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KDKategoriUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KDKategoriUI.Designer.cs">
+      <DependentUpon>KDKategoriUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KurumsalDokuman.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KurumsalDokumanIslemleriUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KurumsalDokumanIslemleriUI.Designer.cs">
+      <DependentUpon>KurumsalDokumanIslemleriUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Loglar.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LogYonetimUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogYonetimUI.Designer.cs">
+      <DependentUpon>LogYonetimUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="PDKategori.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PDKategoriUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PDKategoriUI.Designer.cs">
+      <DependentUpon>PDKategoriUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Personel.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonelCikarUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PersonelCikarUI.Designer.cs">
+      <DependentUpon>PersonelCikarUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PersonelDokuman.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonelDokumanIslemleriUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PersonelDokumanIslemleriUI.Designer.cs">
+      <DependentUpon>PersonelDokumanIslemleriUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PersonelEkleUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PersonelEkleUI.Designer.cs">
+      <DependentUpon>PersonelEkleUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PersonelGoruntule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PersonelGoruntule.Designer.cs">
+      <DependentUpon>PersonelGoruntule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PersonelGuncelleUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PersonelGuncelleUI.Designer.cs">
+      <DependentUpon>PersonelGuncelleUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PersonelRaporlamaUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PersonelRaporlamaUI.Designer.cs">
+      <DependentUpon>PersonelRaporlamaUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PersonelSilUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PersonelSilUI.Designer.cs">
+      <DependentUpon>PersonelSilUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Roller.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RollerUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RollerUI.Designer.cs">
+      <DependentUpon>RollerUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sirket.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SirketUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SirketUI.Designer.cs">
+      <DependentUpon>SirketUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Test.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AnaSayfa.resx">
+      <DependentUpon>AnaSayfa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BolumRaporlamaUI.resx">
+      <DependentUpon>BolumRaporlamaUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BolumUI.resx">
+      <DependentUpon>BolumUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BordroGoruntuleUI.resx">
+      <DependentUpon>BordroGoruntuleUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BordroOlusturUI.resx">
+      <DependentUpon>BordroOlusturUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GorevUI.resx">
+      <DependentUpon>GorevUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HatirlaticiUI.resx">
+      <DependentUpon>HatirlaticiUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KDKategoriUI.resx">
+      <DependentUpon>KDKategoriUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KurumsalDokumanIslemleriUI.resx">
+      <DependentUpon>KurumsalDokumanIslemleriUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogYonetimUI.resx">
+      <DependentUpon>LogYonetimUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDKategoriUI.resx">
+      <DependentUpon>PDKategoriUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonelCikarUI.resx">
+      <DependentUpon>PersonelCikarUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonelDokumanIslemleriUI.resx">
+      <DependentUpon>PersonelDokumanIslemleriUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonelEkleUI.resx">
+      <DependentUpon>PersonelEkleUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonelGoruntule.resx">
+      <DependentUpon>PersonelGoruntule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonelGuncelleUI.resx">
+      <DependentUpon>PersonelGuncelleUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonelRaporlamaUI.resx">
+      <DependentUpon>PersonelRaporlamaUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonelSilUI.resx">
+      <DependentUpon>PersonelSilUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="RollerUI.resx">
+      <DependentUpon>RollerUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SirketUI.resx">
+      <DependentUpon>SirketUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <Content Include="Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

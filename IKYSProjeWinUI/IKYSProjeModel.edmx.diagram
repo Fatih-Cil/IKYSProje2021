@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a751acbbfe434700854ec3c681c6da85" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="IKYSProjeModel.Bolum" Width="1.5" PointX="3" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="IKYSProjeModel.Bordro" Width="1.5" PointX="7.5" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="IKYSProjeModel.Gorev" Width="1.5" PointX="3" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="IKYSProjeModel.KDKategori" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="IKYSProjeModel.KurumsalDokuman" Width="1.5" PointX="3" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="IKYSProjeModel.Loglar" Width="1.5" PointX="7.5" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="IKYSProjeModel.PDKategori" Width="1.5" PointX="8.25" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="IKYSProjeModel.Personel" Width="1.5" PointX="5.25" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IKYSProjeModel.PersonelDokuman" Width="1.5" PointX="10.5" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="IKYSProjeModel.Roller" Width="1.5" PointX="3" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="IKYSProjeModel.Sirket" Width="1.5" PointX="0.75" PointY="6.25" IsExpanded="true" />
+        <AssociationConnector Association="IKYSProjeModel.FK__Bolum__SirketId__2D27B809" ManuallyRouted="false" />
+        <AssociationConnector Association="IKYSProjeModel.FK__Personel__BolumI__34C8D9D1" ManuallyRouted="false" />
+        <AssociationConnector Association="IKYSProjeModel.FK__Bordro__Personel__403A8C7D" ManuallyRouted="false" />
+        <AssociationConnector Association="IKYSProjeModel.FK__Personel__GorevI__35BCFE0A" ManuallyRouted="false" />
+        <AssociationConnector Association="IKYSProjeModel.FK__KurumsalD__KDKId__30F848ED" ManuallyRouted="false" />
+        <AssociationConnector Association="IKYSProjeModel.FK__KurumsalD__Sirke__300424B4" ManuallyRouted="false" />
+        <AssociationConnector Association="IKYSProjeModel.FK__Loglar__Personel__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="IKYSProjeModel.FK__PersonelD__PDKId__3D5E1FD2" ManuallyRouted="false" />
+        <AssociationConnector Association="IKYSProjeModel.FK__Personel__RolId__36B12243" ManuallyRouted="false" />
+        <AssociationConnector Association="IKYSProjeModel.FK__PersonelD__Perso__3C69FB99" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
